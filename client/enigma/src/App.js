@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
 
 function App() {
+
+const {name, setArtist} = useState("");
+const {hits, setHits} = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="inputs">
+        <input type="text" placeholder="artistName" onChange={(event) => {
+        setArtist(event.target.value)
+        }}
+        />
+        <input type="number" placeholder="artistName" onChange={(event) => {
+        setArtist(event.target.value)}}/>
+      </div>
+
     </div>
   );
 }
